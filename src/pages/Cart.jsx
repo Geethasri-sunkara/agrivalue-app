@@ -1,9 +1,10 @@
 import { useContext } from "react";
 import { ProductContext } from "../ProductContext";
-import "../App.css";
 
 function Cart() {
-  const { cart } = useContext(ProductContext);
+  const { cart, removeFromCart } = useContext(ProductContext);
+
+  const total = cart.reduce((sum, item) => sum + item.price, 0);
 
   return (
     <div className="container">
@@ -12,11 +13,19 @@ function Cart() {
       {cart.length === 0 ? (
         <p>Cart is empty</p>
       ) : (
-        cart.map((item, index) => (
-          <div className="card" key={index}>
-            <h3>{item.name}</h3>
-          </div>
-        ))
+        <>
+          {cart.map((item, index) => (
+            <div className="card" key={index}>
+              <h3>{item.name}</h3>
+              <p>₹ {item.price}</p>
+              <button onClick={() => removeFromCart(index)}>
+                Remove
+              </button>
+            </div>
+          ))}
+
+          <h3>Total: ₹ {total}</h3>
+        </>
       )}
     </div>
   );

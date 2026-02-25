@@ -1,25 +1,21 @@
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { ProductContext } from "../ProductContext";
 import "../App.css";
 
 function Navbar() {
+  const { cart } = useContext(ProductContext);
+
   return (
     <nav className="navbar">
+      <h2 className="logo">🌾 AgriValue</h2>
 
-      <Link to="/">Home</Link>
-      <Link to="/login">Login</Link>
-
-      {/* Farmer */}
-      <Link to="/add-product">Add Product</Link>
-
-      {/* Buyer */}
-      <Link to="/products">Products</Link>
-      <Link to="/cart">Cart</Link>
-
-      {/* Dashboards */}
-      <Link to="/farmer">Farmer</Link>
-      <Link to="/buyer">Buyer</Link>
-      <Link to="/admin">Admin</Link>
-
+      <div className="nav-links">
+        <Link to="/">Home</Link>
+        <Link to="/products">Products</Link>
+        <Link to="/cart">Cart ({cart.length})</Link>
+        <Link to="/login">Login</Link>
+      </div>
     </nav>
   );
 }

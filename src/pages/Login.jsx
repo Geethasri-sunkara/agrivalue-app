@@ -8,24 +8,33 @@ function Login() {
 
   const handleLogin = () => {
     if (role === "farmer") navigate("/add-product");
-    else if (role === "buyer") navigate("/products");
-    else navigate("/admin");
+    else navigate("/products");
   };
 
   return (
-    <div className="login-box">
-      <h2>🌾 AgriValue Login</h2>
+    <div className="login-wrapper">
 
-      <input type="text" placeholder="Enter Email" />
-      <input type="password" placeholder="Enter Password" />
+      <div className="login-card">
 
-      <select onChange={(e) => setRole(e.target.value)}>
-        <option value="buyer">Buyer</option>
-        <option value="farmer">Farmer</option>
-        <option value="admin">Admin</option>
-      </select>
+        <h2>🌾 AgriValue Connect</h2>
+        <p>Login to continue</p>
 
-      <button onClick={handleLogin}>Login</button>
+        <input type="email" placeholder="Email Address" />
+        <input type="password" placeholder="Password" />
+
+        <label>Select Role</label>
+
+        <select onChange={(e) => setRole(e.target.value)}>
+          <option value="buyer">Buyer</option>
+          <option value="farmer">Farmer</option>
+        </select>
+
+        <button onClick={handleLogin}>
+          Login
+        </button>
+
+      </div>
+
     </div>
   );
 }

@@ -5,62 +5,41 @@ function Home() {
   return (
     <div>
 
-      {/* HERO SECTION */}
+      {/* HERO */}
       <div
         className="hero"
         style={{ backgroundImage: `url(${hero})` }}
       >
-        🌾 AgriValue Connect
+        <h1>Empowering Farmers Through Technology 🌾</h1>
       </div>
 
       {/* ABOUT */}
-      <div className="container">
-        <h2>About Our Platform</h2>
+      <div className="section">
+        <h2>About Platform</h2>
         <p>
           AgriValue Connect helps farmers convert crops into value-added
-          products like pickles, snacks, and organic foods. Our platform
-          connects farmers directly with buyers and supports rural
-          entrepreneurship using technology.
+          products and sell directly to buyers through a digital marketplace.
         </p>
       </div>
 
       {/* FEATURES */}
-      <div className="container">
-        <h2>🚀 Key Features</h2>
+      <div className="features">
 
-        <div className="products">
-
-          <div className="card">
-            <h3>👨‍🌾 Farmer Support</h3>
-            <p>
-              Farmers can add products, manage inventory, and sell directly.
-            </p>
-          </div>
-
-          <div className="card">
-            <h3>🛒 Buyer Marketplace</h3>
-            <p>
-              Buyers can explore products, add to cart, and place orders.
-            </p>
-          </div>
-
-          <div className="card">
-            <h3>🛠 Admin Management</h3>
-            <p>
-              Admin manages users, products, and platform activities.
-            </p>
-          </div>
-
+        <div className="feature-card">
+          <h3>👨‍🌾 Farmers</h3>
+          <p>Add products and manage inventory easily.</p>
         </div>
-      </div>
 
-      {/* MISSION SECTION */}
-      <div className="container">
-        <h2>🌱 Our Mission</h2>
-        <p>
-          To empower farmers by promoting value-added agriculture and enabling
-          global market access through digital technology.
-        </p>
+        <div className="feature-card">
+          <h3>🛒 Buyers</h3>
+          <p>Browse products and purchase directly.</p>
+        </div>
+
+        <div className="feature-card">
+          <h3>📊 Admin</h3>
+          <p>Manage users and monitor platform activity.</p>
+        </div>
+
       </div>
 
     </div>

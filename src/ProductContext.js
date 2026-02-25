@@ -3,20 +3,19 @@ import { createContext, useState } from "react";
 export const ProductContext = createContext();
 
 export const ProductProvider = ({ children }) => {
-  const [products, setProducts] = useState([]);
   const [cart, setCart] = useState([]);
 
-  const addProduct = (product) => {
-    setProducts([...products, product]);
+  const addToCart = (product) => {
+    setCart((prev) => [...prev, product]);
   };
 
-  const addToCart = (item) => {
-    setCart([...cart, item]);
+  const removeFromCart = (index) => {
+    setCart(cart.filter((_, i) => i !== index));
   };
 
   return (
     <ProductContext.Provider
-      value={{ products, addProduct, cart, addToCart }}
+      value={{ cart, addToCart, removeFromCart }}
     >
       {children}
     </ProductContext.Provider>
